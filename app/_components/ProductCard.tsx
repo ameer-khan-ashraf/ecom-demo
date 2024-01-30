@@ -6,10 +6,6 @@ import { ProductType } from '../types'
 
 const ProductCard = ({product}:{product:ProductType}) => {
   const liked = true;
-  const clickLiked = (e:React.MouseEvent<HTMLButtonElement>)=>{
-    e.stopPropagation();
-    // setLiked(!liked)
-  }
 
   const productLink = `/product/${encodeURIComponent(product.id)}`
 
@@ -24,7 +20,7 @@ const ProductCard = ({product}:{product:ProductType}) => {
           <Link href='#' className='text-sm text-type-low'>{product.brand}</Link>
           <span className='text-base font-medium text-type-high'>${product.price}</span>
         </div>
-        <button type='button' onClick={clickLiked}>
+        <button type='button'>
           <HeartIcon className={liked?'fill-current stroke-current text-red-500':'stroke-current text-black'}/>
         </button>
       </div>
