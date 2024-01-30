@@ -5,10 +5,10 @@ import { HeartIcon } from './svg'
 import { ProductType } from '../types'
 
 const ProductCard = ({product}:{product:ProductType}) => {
-  const [liked, setLiked] = useState(false)
+  const liked = true;
   const clickLiked = (e:React.MouseEvent<HTMLButtonElement>)=>{
     e.stopPropagation();
-    setLiked(!liked)
+    // setLiked(!liked)
   }
 
   const productLink = `/product/${encodeURIComponent(product.id)}`
